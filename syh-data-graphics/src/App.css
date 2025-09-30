@@ -1,0 +1,56 @@
+.chakra-select__icon {
+  visibility: hidden;
+}
+
+
+.user-select-none {
+border-radius: 30px;
+overflow: hidden;
+}
+
+
+h1 {
+    font-family: Coustard!important;
+    font-size: 4em!important;
+}
+
+#root {
+  margin: 0 auto;
+  padding: 0rem;
+  text-align: center;
+}
+
+.logo {
+  height: 9em!important;
+  padding: 1.5em!important;
+  will-change: filter!important;
+}
+
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+
+.question {
+    font-weight: bold;
+}
