@@ -23,7 +23,7 @@ const Method = (method) =>{
     }
 
     if (!data) return <p>Carregant...</p>;
-    console.log(data);
+//     console.log(data);
     return(
          <div key={data.method.id_method} style={{ marginBottom: "1rem" }}>
              <h4>{data.method.method_name} - {data.method.method_description} </h4>

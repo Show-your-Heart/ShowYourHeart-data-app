@@ -22,10 +22,10 @@ const Indicator = (indicator) =>{
     }
 
     if (!data) return <p>Carregant...</p>;
-    console.log(data);
+//     console.log(data);
     return(
          <div key={data.indicator.id_indicator} style={{ marginBottom: "1rem" }}>
-             <p class="question">{data.indicator.indicator_name}  </p>
+             <p class="question" dangerouslySetInnerHTML={{ __html: data.indicator.indicator_name }} />
              {data.indicator.results?.map((answer) => (
                  <Answer answer={answer}/>
              ))}

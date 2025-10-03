@@ -1,0 +1,108 @@
+import React, { useEffect, useState } from "react";
+
+import Plot from "react-plotly.js";
+
+import { login } from '../services/auth.service';
+
+
+const AnswerGender = (props) =>{
+//     defineixo les variables
+    const [data, setData] = useState(null);
+    const [lay, setLayout] = useState(null);
+    const [dataVal, setDataVal] = useState(null);
+    const [dataValPrev, setDataValPrev] = useState(null);
+
+
+    useEffect(() => {
+          fetchMethodSection();
+        }
+        , []
+    );
+
+    async function fetchMethodSection() {
+        console.log(props);
+        console.log(props.columns);
+        console.log(props.values);
+        let val = ""
+        try {
+            val = JSON.parse(props.values);
+        }
+        catch (e){
+             val = [];
+        }
+
+        let col = ""
+        try {
+            col = JSON.parse(props.columns);
+        }
+        catch (e){
+             col = [];
+        }
+        const datacalc = [
+            {
+                "values": val
+                ,"labels": col
+                ,"hoverinfo": 'label+percent+value'
+                ,"textinfo": "label+value"
+                ,"name": 'Clients per tipologia'
+                ,"type": "pie",
+            },
+        ];
+        // Assigno el camp dataVal
+        setDataVal(datacalc)
+
+        const layout = {
+            width: 500
+            , height: 480
+            , font: { family: "Coustard", size: 12, color: "#555"}
+            , paper_bgcolor: "#e1e8e9" //background color of the chart container space
+            , plot_bgcolor: "#e1e8e9" //background color of plot area
+             ,yaxis: {
+                tickformat: ".0%" // Mostra els valors com a percentatges
+                ,fixedrange: true
+            }
+            , legend: {
+                // bgcolor : '#FF0000',
+                font: {
+                    family: 'Nunito',
+                    size: 20,
+                    color: '#26493e'
+                },
+            }
+            , xaxis: {
+                tickfont: {
+                    family: 'Nunito',
+                    size: 20,
+                    color: '#26493e'
+                },
+                fixedrange: true
+            }
+            };
+
+        setLayout(layout);
+    }
+
+    var config = {
+        'responsive': true
+        ,'displayModeBar': true
+        ,'displaylogo': true
+        ,'modeBarButtonsToRemove': ['zoom', 'pan','select', 'zoomIn', 'zoomOut', 'autoScale', 'resetScale','lasso2d']
+    }
+
+
+//     if (!data) return <p>Carregant...</p>;
+    if (!dataVal) return <>Carregant...</>;
+//      console.log(dataVal);
+    return(
+
+        <Plot
+            data={dataVal}
+            layout={lay}
+            config={config}
+        />
+
+    )
+
+}
+
+  export default AnswerGender;

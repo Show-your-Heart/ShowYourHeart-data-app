@@ -22,10 +22,12 @@ const MethodSection = (methodsection) =>{
     }
 
     if (!data) return <p>Carregant...</p>;
-    console.log(data);
+//     console.log(data);
     return(
          <div key={data.methodsection.id_method} style={{ marginBottom: "1rem" }}>
-             <h5>{data.methodsection.method_section_title}  </h5>
+             <h5 className={"ml_" + data.methodsection.method_level}>
+                 {data.methodsection.path_order} - {data.methodsection.method_section_title}
+                 </h5>
              {data.methodsection.indicators.map((indicator) => (
                  <Indicator indicator={indicator}/>
              ))}

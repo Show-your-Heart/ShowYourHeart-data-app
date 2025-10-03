@@ -26,6 +26,7 @@ const Survey = (survey) =>{
     return(
          <div key={data.survey.id_survey} style={{ marginBottom: "1rem" }}>
             <h2>Organització: {data.survey.organization_name}</h2>
+            <p>NIF: {data.survey.vat_number}</p>
                 {data.survey.methods.map((method) => (
                     <Method method={method}/>
                 ))}
