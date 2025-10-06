@@ -24,6 +24,7 @@ const Survey = (survey) =>{
     if (!data) return <p>Carregant...</p>;
 
     return(
+
          <div key={data.survey.id_survey} style={{ marginBottom: "1rem" }}>
             <h2>Organització: {data.survey.organization_name}</h2>
             <p>NIF: {data.survey.vat_number}</p>

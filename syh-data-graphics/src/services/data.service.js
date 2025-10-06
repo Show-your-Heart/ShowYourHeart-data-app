@@ -14,3 +14,10 @@ export async function getAnswersApi (organization, campaign) {
     return httpClient.get(`/answers?${strorganization}${strcampaign}`);
 }
 
+export async function getAnswersApiLanguage (organization, campaign, language) {
+    const strorganization = organization ? `organization=${organization}` : ""
+    const strcampaign = campaign ? `&campaign=${campaign}` : ""
+    const strlanguage = language ? `&language=${language}` : ""
+    return httpClient.get(`/answers?${strorganization}${strcampaign}${strlanguage}`);
+}
+

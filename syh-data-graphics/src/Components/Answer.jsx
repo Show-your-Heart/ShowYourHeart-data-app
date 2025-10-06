@@ -24,14 +24,14 @@ const Answer = (answer) =>{
     if (!data) return <p>Carregant...</p>;
 //     console.log(data);
     return(
-         <div class="answer" key={data.answer.id_indicatorresult} style={{ marginBottom: "1rem" }}>
+         <div className="answer" key={data.answer.id_indicatorresult} style={{ marginBottom: "1rem" }}>
 
              <p>
              {data.answer.str_value}
              {data.answer.str_gender}
              </p>
               {data.answer.prev_str_value && (
-             <p class="prev_answer">
+             <p className="prev_answer">
                  Resposta campanya anterior:<br></br>
                  {data.answer.prev_str_value}
                  {data.answer.prev_str_gender}

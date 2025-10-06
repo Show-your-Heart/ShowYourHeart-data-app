@@ -25,7 +25,7 @@ const Indicator = (indicator) =>{
 //     console.log(data);
     return(
          <div key={data.indicator.id_indicator} style={{ marginBottom: "1rem" }}>
-             <p class="question" dangerouslySetInnerHTML={{ __html: data.indicator.indicator_name }} />
+             <p className="question" dangerouslySetInnerHTML={{ __html: data.indicator.indicator_name }} />
              {data.indicator.results?.map((answer) => (
                  <Answer answer={answer}/>
              ))}

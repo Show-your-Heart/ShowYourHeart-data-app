@@ -20,9 +20,6 @@ const AnswerGender = (props) =>{
     );
 
     async function fetchMethodSection() {
-        console.log(props);
-        console.log(props.columns);
-        console.log(props.values);
         let val = ""
         try {
             val = JSON.parse(props.values);

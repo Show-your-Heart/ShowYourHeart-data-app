@@ -24,7 +24,7 @@ const Campaign = (campaign) =>{
     if (!data) return <p>Carregant...</p>;
 
     return(
-       <div>
+       <div key="divcamp">
            <h1>Campanya: {data.campaign.campaign_name}</h1>
                {data.campaign.surveys.map((survey) => (
                      <Survey survey={survey}/>

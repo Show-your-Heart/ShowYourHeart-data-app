@@ -4,15 +4,20 @@ import '../App.css';
 
 import { Flex, Image } from "@chakra-ui/react"
 import React, { useState, useEffect } from "react";
-import { Navigate, useLocation, Outlet } from "react-router-dom";
+import { Navigate, useLocation, Outlet, useSearchParams } from "react-router-dom";
 
 import { getAnswers } from '../services/data.service';
-import { getAnswersApi } from '../services/data.service';
+import { getAnswersApi, getAnswersApiLanguage } from '../services/data.service';
 import Campaign from '../Components/Campaign';
 
 function AppCharts() {
 
     const [answers, setAnswers] = useState(null);
+    const [searchParams] = useSearchParams();
+        const organization = searchParams.get("organization");
+        const campaign = searchParams.get("campaign");
+        const language = searchParams.get("lang");
+
 
     useEffect(() => {
         fetchAnswers()
@@ -21,21 +26,28 @@ function AppCharts() {
     );
 
     async function fetchAnswers() {
+//          DAdes del json
 //         const data = await getAnswers();
-        const data = await getAnswersApi('058ba7e6-fab1-75af-2123-b056abcaa858', '38c732ac-ab07-af68-8417-7f9e1812a710');
+        var data = "";
+        if (searchParams.has('lang') ){
+            data = await getAnswersApiLanguage(organization, campaign, language);
+        }
+        else {
+            data = await getAnswersApi(organization, campaign);
+        }
         // Assigno el camp data
         setAnswers(data.data);
-//         console.log(data.data)
+        //         console.log(data.data)
 
 
     }
 
      if (!answers) return <p>Carregant...</p>;
-    console.log(answers[0]);
+//     console.log(answers[0]);
 
 
     return (
-        <div
+        <div key="respuesta"
           className="App"
           style={{
             justifyContent: "center",
