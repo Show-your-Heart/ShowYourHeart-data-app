@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 
-import Plot from "react-plotly.js";
+import { useTranslation } from "react-i18next"
+import i18next from "i18next"
 
 import { login } from '../services/auth.service';
 import Method from '../Components/Method';
 
 
 const Survey = (survey) =>{
-//     defineixo les variables
+    const { t, i18n } = useTranslation()
     const [data, setData] = useState(null);
 
     useEffect(() => {
@@ -26,7 +27,7 @@ const Survey = (survey) =>{
     return(
 
          <div key={data.survey.id_survey} style={{ marginBottom: "1rem" }}>
-            <h2>Organització: {data.survey.organization_name}</h2>
+            <h2>{t("survey.organization")}: {data.survey.organization_name}</h2>
             <p>NIF: {data.survey.vat_number}</p>
                 {data.survey.methods.map((method) => (
                     <Method method={method}/>

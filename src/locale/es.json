@@ -1,0 +1,13 @@
+{
+    "translation": {
+        "campaign": {
+            "campaign": "Campaña"
+        },
+      "survey": {
+            "organization": "Entidad"
+        },
+      "Home": "Hombre",
+      "Dona": "Mujer",
+      "N/B": "N/B"
+    }
+}

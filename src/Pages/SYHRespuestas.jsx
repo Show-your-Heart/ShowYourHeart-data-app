@@ -5,6 +5,7 @@ import '../App.css';
 import { Flex, Image } from "@chakra-ui/react"
 import React, { useState, useEffect } from "react";
 import { Navigate, useLocation, Outlet, useSearchParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 import { getAnswers } from '../services/data.service';
 import { getAnswersApi, getAnswersApiLanguage } from '../services/data.service';
@@ -14,10 +15,10 @@ function AppCharts() {
 
     const [answers, setAnswers] = useState(null);
     const [searchParams] = useSearchParams();
-        const organization = searchParams.get("organization");
-        const campaign = searchParams.get("campaign");
-        const language = searchParams.get("lang");
-
+    const organization = searchParams.get("organization");
+    const campaign = searchParams.get("campaign");
+    const language = searchParams.get("lang");
+    const { t, i18n } = useTranslation();
 
     useEffect(() => {
         fetchAnswers()
@@ -31,9 +32,11 @@ function AppCharts() {
         var data = "";
         if (searchParams.has('lang') ){
             data = await getAnswersApiLanguage(organization, campaign, language);
+            i18n.changeLanguage(language);
         }
         else {
             data = await getAnswersApi(organization, campaign);
+            i18n.changeLanguage("ca");
         }
         // Assigno el camp data
         setAnswers(data.data);

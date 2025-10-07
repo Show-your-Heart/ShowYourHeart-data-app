@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react";
 
 import Plot from "react-plotly.js";
 
+import { useTranslation } from "react-i18next"
+import i18next from "i18next"
 import { login } from '../services/auth.service';
 
 
 const AnswerGender = (props) =>{
-//     defineixo les variables
+    const { t, i18n } = useTranslation()
     const [data, setData] = useState(null);
     const [lay, setLayout] = useState(null);
     const [dataVal, setDataVal] = useState(null);
@@ -29,8 +31,15 @@ const AnswerGender = (props) =>{
         }
 
         let col = ""
+        let colTrans = []
         try {
             col = JSON.parse(props.columns);
+            col.forEach(element => {
+                colTrans.push(
+                  i18next.t(element)
+                );
+            });
+        col = colTrans;
         }
         catch (e){
              col = [];
