@@ -6,6 +6,9 @@
       "survey": {
             "organization": "Entidad"
         },
+      "answer": {
+            "prev_campaign": "Respuesta campaña anterior"
+        },
       "Home": "Hombre",
       "Dona": "Mujer",
       "N/B": "N/B"

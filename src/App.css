@@ -90,3 +90,14 @@ h1 {
 .prev_answer {
     color: #888;
 }
+
+.prev_answer_title {
+    color: #888;
+    font-weight: bold;
+    text-align: left;
+    margin-left: -10px;
+}
+
+.tableGender {
+    border: 1px solid black;
+}
