@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+
 import { login } from '../services/auth.service';
 import Indicator from '../Components/Indicator';
 
@@ -6,6 +7,8 @@ import Indicator from '../Components/Indicator';
 const MethodSection = (methodsection) =>{
 //     defineixo les variables
     const [data, setData] = useState(null);
+    const [anchor, setAnchor] = useState(null);
+
 
     useEffect(() => {
           fetchMethodSection();
@@ -15,21 +18,23 @@ const MethodSection = (methodsection) =>{
 
     async function fetchMethodSection() {
         let methsec = methodsection;
+        console.log(methodsection);
+        setAnchor("#"+methodsection.methodsection.id_methods_section);
         setData(methsec);
     }
 
     if (!data) return <p>Carregant...</p>;
-
+//     console.log(data);
     return(
-         <div id={data.methodsection.id_methods_section} key={data.methodsection.id_methods_section} style={{ marginBottom: "1rem" }}>
-             <h5 className={"ml_" + data.methodsection.method_level}>
-                 {data.methodsection.path_order} - {data.methodsection.method_section_title}
-                 <a href="#idhead">&#8657;</a>
-                 </h5>
-             {data.methodsection.indicators.map((indicator) => (
-                 <Indicator indicator={indicator}/>
-             ))}
-         </div>
+            <div>
+            {(() => {
+                if (data.methodsection.method_level==1) {
+                    return (
+                    <a href={anchor}>{data.methodsection.path_order} - {data.methodsection.method_section_title}</a>
+                    )
+                }
+            })()}
+            </div>
     )
 
 }

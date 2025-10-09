@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
 
-import Plot from "react-plotly.js";
-
 
 import { login } from '../services/auth.service';
 import MethodSection from '../Components/MethodSection';
-
+import MethodSectionMenu from '../Components/MethodSectionMenu';
+import { useTranslation } from "react-i18next"
+import i18next from "i18next"
 
 const Method = (method) =>{
-//     defineixo les variables
+    const { t, i18n } = useTranslation()
     const [data, setData] = useState(null);
 
-    useEffect(() => {
+      useEffect(() => {
           fetchMethod();
         }
         , []
@@ -25,8 +25,16 @@ const Method = (method) =>{
     if (!data) return <p>Carregant...</p>;
 //     console.log(data);
     return(
-         <div key={data.method.id_method} style={{ marginBottom: "1rem" }}>
-             <h4>{data.method.method_name} - {data.method.method_description} </h4>
+         <div id="idhead" key={data.method.id_method} style={{ marginBottom: "1rem" }}>
+             <h3>{data.method.method_name}</h3>
+              <p className="description"> {data.method.method_description} </p>
+              <p className="menu"> {t("menu")}</p>
+                  <div className="menuelement">
+                      {data.method.method_section.map((method_section) => (
+                        <MethodSectionMenu methodsection={method_section}/>
+                     ))}
+                  </div>
+
              {data.method.method_section.map((method_section) => (
                 <MethodSection methodsection={method_section}/>
              ))}
