@@ -7,8 +7,6 @@ import Answer from '../Components/Answer';
 
 
 const Indicator = (indicator) =>{
-//     defineixo les variables
-    const [data, setData] = useState(null);
 
     useEffect(() => {
           fetchMethodSection();
@@ -18,15 +16,13 @@ const Indicator = (indicator) =>{
 
     async function fetchMethodSection() {
         let ind = indicator;
-        setData(ind);
     }
 
-    if (!data) return <p>Carregant...</p>;
-//     console.log(data);
+
     return(
-         <div key={data.indicator.id_indicator} style={{ marginBottom: "1rem" }}>
-             <p className="question" dangerouslySetInnerHTML={{ __html: data.indicator.indicator_name }} />
-             {data.indicator.results?.map((answer) => (
+         <div key={indicator.indicator.id_indicator} style={{ marginBottom: "1rem" }}>
+             <p className="question" dangerouslySetInnerHTML={{ __html: indicator.indicator.indicator_name }} />
+             {indicator.indicator.results?.map((answer) => (
                  <Answer answer={answer}/>
              ))}
          </div>

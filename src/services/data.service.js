@@ -2,9 +2,8 @@
 import { httpClient } from '../utils/http-client';
 
 export async function getAnswers () {
-   const response = await fetch(`/results.json`);
+   const response = await fetch(`/sub/results.json`);
    const res = await response.json()
-//   console.log(res[0]);
    return await res[0];
 }
 

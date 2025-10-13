@@ -12,6 +12,9 @@
       "Home": "Hombre",
       "Dona": "Mujer",
       "N/B": "N/B",
-      "menu": "Menú"
+      "menu": "Menú",
+      "year": "Año",
+      "current_year": "Año Actual",
+      "previous_year": "Año Anterior"
     }
 }

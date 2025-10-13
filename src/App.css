@@ -4,7 +4,7 @@
 
 
 .user-select-none {
-border-radius: 30px;
+border-radius: 10px;
 overflow: hidden;
 }
 
@@ -103,8 +103,34 @@ h1 {
 }
 
 .tableGender {
-    border: 1px solid black;
+    border-bottom: 1px solid black;
+    width: 500px;
+    margin: 10px;
+    border-radius: 15px;
+    overflow:hidden
 }
+
+.th {
+    color: white;
+    background: black;
+    text-align: center;
+    height: 40px;
+}
+
+td {
+    color: black;
+    text-align: center;
+    height: 40px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.tdprev {
+    color: #888;
+    text-align: center;
+}
+
+
 
 .menuelement {
     text-align: left;
@@ -116,4 +142,74 @@ h1 {
     color: #666;
     text-align: left;
     padding-left: 20px;
+}
+
+.entitat{
+    background-color: #DDD;
+}
+
+.metode{
+    background-color: #EEE;
+}
+
+
+a {
+    color: #CCC !important;
+}
+
+.asidewidth{
+
+}
+
+.asidediv{
+    width: 300px;
+}
+
+.cos {
+    min-width: 600px;
+}
+
+
+.my-accordion {
+  border-radius: 8px;
+  overflow: hidden; /* per evitar que sobresurti el fons */
+}
+
+/* Color quan està plegat */
+.my-accordion-summary {
+  background-color: var(--color-gray-800);
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+
+/* Color quan està desplegat */
+.my-accordion.Mui-expanded .my-accordion-summary {
+  background-color: var(--color-gray-800);
+}
+
+/* Detalls */
+.my-accordion-details {
+  background-color: var(--color-gray-600);
+  color: #444;
+  text-align: left;
+}
+
+.my-accordion.MuiPaper-root {
+  background-color: var(--color-gray-800) !important;
+}
+
+.my-accordion.MuiPaper-root.Mui-expanded {
+  background-color: var(--color-gray-800) !important;
+}
+
+.linkmenuparent {
+color: var(--color-gray-300);
+font-family: var(--font-sans) !important;
+font-size: var(--text-sm) !important;
+}
+
+.linkmenu {
+color: var(--color-gray-300);
+font-family: var(--font-sans) !important;
+font-size: var(--text-sm);
 }

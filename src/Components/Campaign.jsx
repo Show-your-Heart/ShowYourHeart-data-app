@@ -10,9 +10,6 @@ import Survey from '../Components/Survey';
 const Campaign = (campaign) =>{
     const { t, i18n } = useTranslation()
 
-//     defineixo les variables
-    const [data, setData] = useState(null);
-
     useEffect(() => {
           fetchCampaign();
         }
@@ -21,16 +18,14 @@ const Campaign = (campaign) =>{
 
     async function fetchCampaign() {
         let camp = campaign;
-        setData(camp);
     }
 
-    if (!data) return <p>Carregant...</p>;
+
 
     return(
        <div key="divcamp">
-           <h1>{t("campaign.campaign")}: {data.campaign.campaign_name}</h1>
-               {data.campaign.surveys.map((survey) => (
-                     <Survey survey={survey}/>
+               {campaign.campaign.surveys.map((survey) => (
+                     <Survey survey={survey} campaign={campaign.campaign.campaign_name}/>
                ))}
         </div>
     )

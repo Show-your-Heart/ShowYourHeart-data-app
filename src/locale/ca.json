@@ -12,6 +12,9 @@
       "Home": "Home",
       "Dona": "Dona",
       "N/B": "N/B",
-      "menu": "Menú"
+      "menu": "Menú",
+      "year": "Any",
+      "current_year": "Any Actual",
+      "previous_year": "Any Anterior"
     }
 }
