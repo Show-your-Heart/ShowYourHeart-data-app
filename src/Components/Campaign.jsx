@@ -23,7 +23,7 @@ const Campaign = (campaign) =>{
 
 
     return(
-       <div key="divcamp">
+       <div id="idhead" key="divcamp">
                {campaign.campaign.surveys.map((survey) => (
                      <Survey survey={survey} campaign={campaign.campaign.campaign_name}/>
                ))}

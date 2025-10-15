@@ -154,7 +154,7 @@ td {
 
 
 a {
-    color: #CCC !important;
+    color: #BBB !important;
 }
 
 .asidewidth{
@@ -175,17 +175,20 @@ a {
   overflow: hidden; /* per evitar que sobresurti el fons */
 }
 
-/* Color quan està plegat */
-.my-accordion-summary {
-  background-color: var(--color-gray-800);
-  color: #333;
-  transition: background-color 0.3s ease;
-}
-
 /* Color quan està desplegat */
 .my-accordion.Mui-expanded .my-accordion-summary {
   background-color: var(--color-gray-800);
+  color: blue;
+  font-family: var(--font-sans);
+  font-weight: bold !important;
 }
+
+.my-accordion.Mui-expanded .my-accordion-summary .css-rizt0-MuiTypography-root{
+  background-color: var(--color-gray-800);
+  font-family: var(--font-sans);
+  font-weight: bold !important;
+}
+
 
 /* Detalls */
 .my-accordion-details {
@@ -202,14 +205,23 @@ a {
   background-color: var(--color-gray-800) !important;
 }
 
+
 .linkmenuparent {
 color: var(--color-gray-300);
-font-family: var(--font-sans) !important;
-font-size: var(--text-sm) !important;
 }
+
 
 .linkmenu {
 color: var(--color-gray-300);
 font-family: var(--font-sans) !important;
 font-size: var(--text-sm);
+}
+
+.menu {
+    margin-top: 50px
+}
+
+.contingut {
+    margin-top: 50px;
+    margin-left: 300px;
 }

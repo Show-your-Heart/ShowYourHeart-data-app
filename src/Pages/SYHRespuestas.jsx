@@ -67,23 +67,23 @@ function AppCharts() {
             justifyContent: "center",
             alignItems: "center",
           }}
-        >
+      >
 
 
 
             {/*  Header*/}
-            <div className="p-3 lg:px-5 lg:pl-3 rounded-md w-[80%]  bg-pink-600 ">
-                <div className="flex items-center justify-between">
-                    <div className="flex items-center justify-start rtl:justify-end">
-                        <img src={logo} className="h-8 me-10" alt="Show your heart logo"/>
-                    </div>
+           <div className="fixed top-0 left-0 w-full z-50 p-3 lg:px-5 lg:pl-3 bg-pink-600 rounded-md">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center justify-start rtl:justify-end">
+                  <img src={logo} className="h-8 me-10" alt="Show your heart logo"/>
                 </div>
+              </div>
             </div>
 
             <div className="flex-grow flex gap-2 mt-0 pt-0 p-2 items-stretch">
-
-                <aside id="logo-sidebar" className="py-[240px] asidewidth bg-gray-800 rounded-md transition-transform left-0 top-0" aria-label="Sidebar" aria-hidden="true">
-
+                <aside id="logo-sidebar"
+                className="fixed pt-16 h-screen py-[240px] asidewidth bg-gray-800
+                rounded-md left-0 top-10 overflow-y-auto menu" aria-label="Sidebar" aria-hidden="true">
                     <div className="overflow-y-auto asidediv">
                         <nav>
                             <MethodSectionMenuAccordion methodsection={answers[0].surveys[0].methods[0].method_section}/>
@@ -92,7 +92,7 @@ function AppCharts() {
                 </aside>
 
 
-                 <div className="cos mx-auto p-4 flex flex-col grow min-w-0 ">
+                 <div className="contingut ml-[240px] p-4 fixed h-screen overflow-y-auto grow min-w-0 ">
  <Campaign campaign={answers[0]}/>
 {/*                      <div id="content-wrapper" class="d-flex flex-column"> */}
 

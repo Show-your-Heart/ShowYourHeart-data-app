@@ -21,7 +21,7 @@ const Method = (method) =>{
     }
 
     return(
-         <div id="idhead" key={method.method.id_method} style={{ marginBottom: "1rem" }}>
+         <div key={method.method.id_method} style={{ marginBottom: "1rem" }}>
 
              <div className="metode">
              <h1>{method.method.method_name} - {method.campaign}</h1>

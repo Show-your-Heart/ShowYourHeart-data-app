@@ -11,8 +11,14 @@ import Typography from "@mui/material/Typography";
 
 const MethodSection = (methodsections) =>{
 //     defineixo les variables
-    const grouped = [];
+  const grouped = [];
   let current = null;
+  const [expanded, setExpanded] = React.useState(false);
+
+  const handleChange = (panel) => (event, isExpanded) => {
+    setExpanded(isExpanded ? panel : false);
+  };
+
 
   methodsections.methodsection.forEach((s) => {
     if (s.method_level === 1) {
@@ -29,7 +35,12 @@ const MethodSection = (methodsections) =>{
   return (
     <div>
       {grouped.map((section) => (
-        <Accordion className="my-accordion" key={section.id_methods_section}>
+        <Accordion
+        className="my-accordion"
+         key={section.id_methods_section}
+         expanded={expanded === section.id_methods_section}
+         onChange={handleChange(section.id_methods_section)}
+         >
           <AccordionSummary className="my-accordion-summary">
             <Typography className="linkmenuparent">{section.method_section_title}</Typography>
           </AccordionSummary>
