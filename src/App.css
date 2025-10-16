@@ -157,9 +157,6 @@ a {
     color: #BBB !important;
 }
 
-.asidewidth{
-
-}
 
 .asidediv{
     width: 300px;
@@ -195,6 +192,8 @@ a {
   background-color: var(--color-gray-600);
   color: #444;
   text-align: left;
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
 }
 
 .my-accordion.MuiPaper-root {
@@ -224,4 +223,8 @@ font-size: var(--text-sm);
 .contingut {
     margin-top: 50px;
     margin-left: 300px;
+}
+
+.w-full {
+    width: 99%;
 }

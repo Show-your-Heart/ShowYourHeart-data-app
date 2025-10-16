@@ -62,7 +62,7 @@ function AppCharts() {
 
     return (
         <div key="respuesta"
-          className="App"
+          className="App overflow-x-auto"
           style={{
             justifyContent: "center",
             alignItems: "center",
@@ -70,36 +70,25 @@ function AppCharts() {
       >
 
 
-
-            {/*  Header*/}
-           <div className="fixed top-0 left-0 w-full z-50 p-3 lg:px-5 lg:pl-3 bg-pink-600 rounded-md">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center justify-start rtl:justify-end">
+           <div className="fixed w-full z-50 p-3 bg-pink-600 rounded-md">
                   <img src={logo} className="h-8 me-10" alt="Show your heart logo"/>
+           </div>
+
+           <div className="flex-grow flex ml-10 mt-0 pt-0 p-2 items-stretch">
+                <div id="logo-sidebar"
+                className="fixed pt-4 h-screen bg-gray-800
+                rounded-md left-10 top-10 overflow-y-auto menu asidediv"
+                aria-label="Sidebar" aria-hidden="true">
+                        <MethodSectionMenuAccordion methodsection={answers[0].surveys[0].methods[0].method_section}/>
                 </div>
-              </div>
-            </div>
-
-            <div className="flex-grow flex gap-2 mt-0 pt-0 p-2 items-stretch">
-                <aside id="logo-sidebar"
-                className="fixed pt-16 h-screen py-[240px] asidewidth bg-gray-800
-                rounded-md left-0 top-10 overflow-y-auto menu" aria-label="Sidebar" aria-hidden="true">
-                    <div className="overflow-y-auto asidediv">
-                        <nav>
-                            <MethodSectionMenuAccordion methodsection={answers[0].surveys[0].methods[0].method_section}/>
-                        </nav>
-                    </div>
-                </aside>
+           </div>
 
 
-                 <div className="contingut ml-[240px] p-4 fixed h-screen overflow-y-auto grow min-w-0 ">
- <Campaign campaign={answers[0]}/>
-{/*                      <div id="content-wrapper" class="d-flex flex-column"> */}
+         <div className="contingut p-4 fixed h-screen v-screen overflow-y-auto overflow-x-auto  ">
+             <Campaign campaign={answers[0]}/>
+        </div>
 
-{/*                     <Campaign campaign={answers}/> */}
-{/*                     </div> */}
-                </div>
-            </div>
+
 
         </div>
     );
