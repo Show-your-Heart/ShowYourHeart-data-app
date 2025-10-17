@@ -9,10 +9,8 @@ import { login } from '../services/auth.service';
 
 const AnswerGender = (props) =>{
     const { t, i18n } = useTranslation()
-    const [data, setData] = useState(null);
     const [lay, setLayout] = useState(null);
     const [dataVal, setDataVal] = useState(null);
-    const [dataValPrev, setDataValPrev] = useState(null);
 
 
     useEffect(() => {

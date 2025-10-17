@@ -21,6 +21,7 @@ import { getAnswers } from '../services/data.service';
 import { getAnswersApi, getAnswersApiLanguage } from '../services/data.service';
 import Campaign from '../Components/Campaign';
 import MethodSectionMenuAccordion from '../Components/MethodSectionMenuAccordion';
+import Loader from '../Components/Loader';
 
 function AppCharts() {
 
@@ -57,7 +58,7 @@ function AppCharts() {
 
     }
 
-     if (!answers) return <p>Carregant...</p>;
+     if (!answers) return <Loader/>;
 //     console.log(answers.surveys[0].methods[0]);
 
     return (

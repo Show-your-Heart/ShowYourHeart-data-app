@@ -4,8 +4,6 @@ import Indicator from '../Components/Indicator';
 
 
 const MethodSection = (methodsection) =>{
-//     defineixo les variables
-    const [data, setData] = useState(null);
 
     useEffect(() => {
           fetchMethodSection();
@@ -14,24 +12,19 @@ const MethodSection = (methodsection) =>{
     );
 
     async function fetchMethodSection() {
-        let methsec = methodsection;
-        setData(methsec);
     }
 
-    if (!data) return <p>Carregant...</p>;
-
     return(
-         <div id={data.methodsection.id_methods_section} key={data.methodsection.id_methods_section} style={{ marginBottom: "1rem" }}>
-             <h5 className={"ml_" + data.methodsection.method_level}>
-                 {data.methodsection.path_order} - {data.methodsection.method_section_title}
+         <div id={methodsection.methodsection.id_methods_section} key={methodsection.methodsection.id_methods_section} style={{ marginBottom: "1rem" }}>
+             <h5 className={"ml_" + methodsection.methodsection.method_level}>
+                 {methodsection.methodsection.path_order} - {methodsection.methodsection.method_section_title}
                  <a href="#idhead">&#8657;</a>
                  </h5>
-             {data.methodsection.indicators.map((indicator) => (
+             {methodsection.methodsection.indicators.map((indicator) => (
                  <Indicator indicator={indicator}/>
              ))}
          </div>
     )
-
 }
 
   export default MethodSection;
