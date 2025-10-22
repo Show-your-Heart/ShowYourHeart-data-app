@@ -75,7 +75,7 @@ function AppCharts() {
             </div>
 
             {/*  Contingut */}
-            <div className="contingut p-4">
+            <div id="section-to-print" className="contingut p-4">
                 <Campaign campaign={answers[0]}/>
             </div>
 
