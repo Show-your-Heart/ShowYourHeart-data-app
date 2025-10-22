@@ -228,3 +228,22 @@ font-size: var(--text-sm);
 .w-full {
     width: 99%;
 }
+
+.indicator {
+    margin-bottom: 1rem;
+}
+
+
+@media print {
+  div.indicador {
+    break-inside: avoid;
+  }
+
+  div.answer {
+    break-inside: avoid;
+  }
+
+  div.tableGender {
+    break-inside: avoid;
+  }
+}
