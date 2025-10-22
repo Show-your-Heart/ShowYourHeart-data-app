@@ -250,7 +250,7 @@ font-size: var(--text-sm);
   body {
     visibility: hidden;
   }
-  
+
   #section-to-print {
     visibility: visible;
     position: absolute;
@@ -261,4 +261,13 @@ font-size: var(--text-sm);
   }
 }
 
+@media (max-width: 767px) {
+    .hidden-mobile {
+      display: none;
+    }
 
+    .contingut {
+    margin-top: 50px;
+    margin-left: 0px;
+}
+}

@@ -64,7 +64,7 @@ function AppCharts() {
             </div>
 
             {/*  Menú */}
-            <div className="flex-grow flex ml-10 mt-0 pt-0 p-2 items-stretch">
+            <div className="flex-grow flex ml-10 mt-0 pt-0 p-2 items-stretch hidden-mobile">
                 <div id="logo-sidebar"
                     className="fixed pt-4 h-screen bg-gray-800
                     rounded-md left-10 top-10 overflow-y-auto menu asidediv"
