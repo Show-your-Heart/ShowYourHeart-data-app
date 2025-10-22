@@ -251,6 +251,10 @@ font-size: var(--text-sm);
     visibility: hidden;
   }
 
+  a.internal-link {
+    visibility: hidden;
+  }
+
   #section-to-print {
     visibility: visible;
     position: absolute;

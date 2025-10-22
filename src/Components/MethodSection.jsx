@@ -18,7 +18,7 @@ const MethodSection = (methodsection) =>{
          <div id={methodsection.methodsection.id_methods_section} key={methodsection.methodsection.id_methods_section} style={{ marginBottom: "1rem" }}>
              <h5 className={"ml_" + methodsection.methodsection.method_level}>
                  {methodsection.methodsection.path_order} - {methodsection.methodsection.method_section_title}
-                 <a href="#idhead">&#8657;</a>
+                 <a className="internal-link" href="#idhead">&#8657;</a>
                  </h5>
              {methodsection.methodsection.indicators.map((indicator) => (
                  <Indicator indicator={indicator}/>
