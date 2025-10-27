@@ -21,10 +21,21 @@ const Indicator = (indicator) =>{
 
     return(
          <div key={indicator.indicator.id_indicator} className="indicator">
-             <p className="question" dangerouslySetInnerHTML={{ __html: indicator.indicator.indicator_name }} />
-             {indicator.indicator.results?.map((answer) => (
-                 <Answer answer={answer}/>
-             ))}
+              {(() => {
+
+                if (indicator.indicator.indicator_code!=null) {
+                    return (
+                     <div>
+                     <p className="question" dangerouslySetInnerHTML={{ __html: indicator.indicator.indicator_code + " - " +indicator.indicator.indicator_name }} />
+                     {indicator.indicator.results?.map((answer) => (
+                         <Answer answer={answer}/>
+                     ))}
+                    </div>
+                  )
+                }
+            })()}
+
+
          </div>
     )
 
