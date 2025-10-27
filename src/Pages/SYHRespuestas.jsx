@@ -23,6 +23,7 @@ function AppCharts() {
     const organization = searchParams.get("organization");
     const campaign = searchParams.get("campaign");
     const language = searchParams.get("lang");
+    const direct = searchParams.get("direct");
     const { t, i18n } = useTranslation();
 
     useEffect(() => {
@@ -36,12 +37,20 @@ function AppCharts() {
 //         const data = await getAnswers();
 //         setAnswers(data);
         var data = "";
+
+        var vdirect = undefined;
+
+         if (searchParams.has('direct') ){
+             vdirect = direct;
+         }
+
+
         if (searchParams.has('lang') ){
-            data = await getAnswersApiLanguage(organization, campaign, language);
+            data = await getAnswersApiLanguage(organization, campaign, language, vdirect);
             i18n.changeLanguage(language);
         }
         else {
-            data = await getAnswersApi(organization, campaign);
+            data = await getAnswersApiLanguage(organization, campaign, undefined, vdirect);
             i18n.changeLanguage("ca");
         }
         setAnswers(data.data);
@@ -58,9 +67,12 @@ function AppCharts() {
                 alignItems: "center",
             }}
         >
+
             {/*  Capçalera Logo */}
-            <div className="fixed w-full z-50 p-3 bg-pink-600 rounded-md">
-                <img src={logo} className="h-8 me-10" alt="Show your heart logo"/>
+            <div id="section-to-print-2" className="fixed w-full z-50 p-3 bg-pink-600 rounded-md">
+                 <header>
+                    <img src={logo} className="h-8 me-10" alt="Show your heart logo"/>
+                 </header>
             </div>
 
             {/*  Menú */}
@@ -78,6 +90,8 @@ function AppCharts() {
             <div id="section-to-print" className="contingut p-4">
                 <Campaign campaign={answers[0]}/>
             </div>
+
+
 
         </div>
     );

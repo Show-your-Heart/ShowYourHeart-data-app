@@ -12,6 +12,7 @@ const MethodSection = (methodsection) =>{
     );
 
     async function fetchMethodSection() {
+
     }
 
     return(

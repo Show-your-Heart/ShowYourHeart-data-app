@@ -25,7 +25,7 @@ const Survey = (survey) =>{
 
     return(
         <>
-         <div className="entitat" key={survey.survey.id_survey} style={{ marginBottom: "1rem" }}>
+         <div className="entitat" key="survey" style={{ marginBottom: "1rem" }}>
             <h2>{survey.survey.organization_name}</h2>
          </div>
          <div key={survey.survey.id_survey}>
