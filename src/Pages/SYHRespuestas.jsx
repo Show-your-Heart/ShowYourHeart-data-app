@@ -22,6 +22,7 @@ function AppCharts() {
     const [searchParams] = useSearchParams();
     const organization = searchParams.get("organization");
     const campaign = searchParams.get("campaign");
+    const method = searchParams.get("method");
     const language = searchParams.get("lang");
     const direct = searchParams.get("direct");
     const { t, i18n } = useTranslation();
@@ -46,11 +47,11 @@ function AppCharts() {
 
 
         if (searchParams.has('lang') ){
-            data = await getAnswersApiLanguage(organization, campaign, language, vdirect);
+            data = await getAnswersApiLanguage(organization, campaign, method, language, vdirect);
             i18n.changeLanguage(language);
         }
         else {
-            data = await getAnswersApiLanguage(organization, campaign, undefined, vdirect);
+            data = await getAnswersApiLanguage(organization, campaign, method, undefined, vdirect);
             i18n.changeLanguage("ca");
         }
         setAnswers(data.data);
@@ -70,8 +71,11 @@ function AppCharts() {
 
             {/*  Capçalera Logo */}
             <div id="section-to-print-2" className="fixed w-full z-50 p-3 bg-pink-600 rounded-md">
-                 <header>
+                 <header className="header">
                     <img src={logo} className="h-8 me-10" alt="Show your heart logo"/>
+                    <button
+                     className="border border-base-200 cursor-pointer font-medium px-3 py-2"
+                     onClick={() => window.print()}>{t("print")}</button>
                  </header>
             </div>
 

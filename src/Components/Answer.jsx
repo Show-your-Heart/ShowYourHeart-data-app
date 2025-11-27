@@ -76,7 +76,7 @@ const Answer = (answer) =>{
                   )
                 }
                 else if (answer.answer.str_gender
-                        && (answer.answer.str_value=="[,,]" || answer.answer.str_value=="[0,0,0]")) {
+                        && (!answer.answer.str_value || answer.answer.str_value=="[,,]" || answer.answer.str_value=="[0,0,0]")) {
                   return (
                      <p>N/A</p>
                   )
@@ -87,9 +87,9 @@ const Answer = (answer) =>{
                      <table className="tableGender">
                         <thead>
                             <tr className="">
-                                    <th className=" th">{t("year")}</th>
+                                    <th className="th">{t("year")}</th>
                                 {answer.answer.gender.map((head, headID) => (
-                                    <th className=" th" key={headID}>{i18next.t(head)}</th>
+                                    <th className="th" key={headID}>{i18next.t(head)}</th>
                                 ))}
                             </tr>
                         </thead>
@@ -102,7 +102,7 @@ const Answer = (answer) =>{
                         </tr>
                         {answer.answer.prev_str_value && (
                             <tr>
-                                <td className=" tdprev"> {t("previous_year")}  </td>
+                                <td className="tdprev"> {t("previous_year")}  </td>
                                 {answer.answer.prev_value.map((rowContent, rowID) => (
                                      <td className="tdprev" key={rowID}>{rowContent}</td>
                                 ))}
@@ -160,7 +160,7 @@ const Answer = (answer) =>{
                                 )
                             }
                             else if (answer.answer.prev_str_gender
-                                && (answer.answer.prev_str_value=="[,,]" || answer.answer.prev_str_value=="[0,0,0]")) {
+                                && (!answer.answer.prev_str_value ||  answer.answer.prev_str_value=="[,,]" || answer.answer.prev_str_value=="[0,0,0]")) {
                                 return (
                                     <>
                                     <p className="prev_answer_title">{t("answer.prev_campaign")}:</p>

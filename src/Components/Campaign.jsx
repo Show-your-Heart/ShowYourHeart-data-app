@@ -1,14 +1,10 @@
 import React, { useEffect, useState } from "react";
 
-import { useTranslation } from "react-i18next"
-import i18next from "i18next"
-
 import { login } from '../services/auth.service';
 import Survey from '../Components/Survey';
 
 
 const Campaign = (campaign) =>{
-    const { t, i18n } = useTranslation()
 
     useEffect(() => {
           fetchCampaign();

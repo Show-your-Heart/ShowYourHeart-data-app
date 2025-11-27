@@ -15,6 +15,7 @@
       "menu": "Menú",
       "year": "Any",
       "current_year": "Any Actual",
-      "previous_year": "Any Anterior"
+      "previous_year": "Any Anterior",
+      "print": "Imprimir"
     }
 }

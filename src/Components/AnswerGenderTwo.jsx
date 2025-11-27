@@ -147,9 +147,9 @@ const AnswerGender = (props) =>{
     }
 
 
-//     if (!data) return <p>Carregant...</p>;
+
     if (!dataVal) return <>Carregant...</>;
-//      console.log(dataVal);
+
     return(
 
         <Plot

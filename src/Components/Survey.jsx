@@ -1,16 +1,10 @@
 import React, { useEffect, useState } from "react";
 
-import { useTranslation } from "react-i18next"
-import i18next from "i18next"
-
 import { login } from '../services/auth.service';
 import Method from '../Components/Method';
 
 
 const Survey = (survey) =>{
-    const { t, i18n } = useTranslation()
-
-
     useEffect(() => {
           fetchSurvey();
         }

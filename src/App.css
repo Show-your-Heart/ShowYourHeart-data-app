@@ -245,9 +245,38 @@ font-size: var(--text-sm);
 
   div.tableGender {
     break-inside: avoid;
+    border-bottom: 1px solid black;
+    width: 500px;
+    margin: 10px;
+    border-radius: 15px;
+    overflow:hidden
   }
 
+  .th {
+    border: 1px solid #000;
+    text-align: center;
+    height: 40px;
+    }
+
+    td {
+        color: black;
+        text-align: center;
+        height: 40px;
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+    }
+
+    .tdprev {
+        color: #888;
+        text-align: center;
+    }
+
+
   body {
+    visibility: hidden;
+  }
+
+  header {
     visibility: hidden;
   }
 
@@ -284,3 +313,15 @@ font-size: var(--text-sm);
     }
 }
 
+
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  height: 2rem;
+  margin-right: 2.5rem;
+}

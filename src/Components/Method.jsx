@@ -3,13 +3,8 @@ import React, { useEffect, useState } from "react";
 
 import { login } from '../services/auth.service';
 import MethodSection from '../Components/MethodSection';
-import { useTranslation } from "react-i18next"
-import i18next from "i18next"
 
 const Method = (method) =>{
-    const { t, i18n } = useTranslation()
-
-
       useEffect(() => {
           fetchMethod();
         }
