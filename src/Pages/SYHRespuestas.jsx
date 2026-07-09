@@ -24,6 +24,7 @@ function AppCharts() {
     const campaign = searchParams.get("campaign");
     const method = searchParams.get("method");
     const language = searchParams.get("lang");
+    const project = searchParams.get("project");
     const direct = searchParams.get("direct");
     const { t, i18n } = useTranslation();
 
@@ -46,12 +47,13 @@ function AppCharts() {
          }
 
 
+
         if (searchParams.has('lang') ){
-            data = await getAnswersApiLanguage(organization, campaign, method, language, vdirect);
+            data = await getAnswersApiLanguage(organization, campaign, method, language, vdirect, project);
             i18n.changeLanguage(language);
         }
         else {
-            data = await getAnswersApiLanguage(organization, campaign, method, undefined, vdirect);
+            data = await getAnswersApiLanguage(organization, campaign, method, undefined, vdirect, project);
             i18n.changeLanguage("ca");
         }
         setAnswers(data.data);

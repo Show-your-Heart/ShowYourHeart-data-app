@@ -21,6 +21,7 @@ const Survey = (survey) =>{
         <>
          <div className="entitat" key="survey" style={{ marginBottom: "1rem" }}>
             <h2>{survey.survey.organization_name}</h2>
+            <h3>{survey.survey.project_name}</h3>
          </div>
          <div key={survey.survey.id_survey}>
                 {survey.survey.methods.map((method) => (
