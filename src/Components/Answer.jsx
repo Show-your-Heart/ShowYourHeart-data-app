@@ -21,25 +21,47 @@ const Answer = (answer) =>{
 
     async function fetchMethodSection() {
         try{
-            if (answer.answer.str_value.startsWith("[")){
-                const arr = answer.answer.str_value.replace('["','').replace('"]','').split('","');
-                const itemList = arr.map((item, index) => (
-                    <li key={index}>{item}</li>
-                  ));
-                setList(itemList);
+            if (answer.answer.str_value.startsWith("[")) {
+                const arr = answer.answer.str_value.replace('["', '').replace('"]', '').split('","');
+                if (answer.answer.str_list && answer.answer.str_list.startsWith("[")) {
+                    const ent = answer.answer.str_list.replace('["', '').replace('"]', '').split('","');
+                    const itemList = arr.map((item, index) => (
+                        <li key={index}>{ent[index]} ➡️ {item}</li>
+                    ));
+                    setList(itemList);
+
+                }
+                else{
+                    const itemList = arr.map((item, index) => (
+                        <li key={index}>{item}</li>
+                    ));
+                    setList(itemList);
+                }
+
             }
         }
         catch (e){
+            console.log(e)
             const a = 0;
         }
 
         try{
             if (answer.answer.prev_str_value.startsWith("[")){
                 const arr = answer.answer.prev_str_value.replace('["','').replace('"]','').split('","');
-                const itemList = arr.map((item, index) => (
-                    <li key={index}>{item}</li>
-                  ));
-                setPrevList(itemList);
+                if (answer.answer.prev_str_list && answer.answer.str_list.startsWith("[")) {
+                    const ent = answer.answer.prev_str_list.replace('["', '').replace('"]', '').split('","');
+                    const itemList = arr.map((item, index) => (
+                        <li key={index}>{ent[index]} ➡️ {item}</li>
+                    ));
+                    setPrevList(itemList);
+
+                }
+                else {
+                    const itemList = arr.map((item, index) => (
+                        <li key={index}>{item}</li>
+                    ));
+                    setPrevList(itemList);
+                }
             }
         }
         catch (e){
