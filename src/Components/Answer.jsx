@@ -78,11 +78,11 @@ const Answer = (answer) =>{
              <div>
 
                {(() => {
-                if (answer.answer.str_value=="true") {
+                if (answer.answer.str_value.toLowerCase()=="true") {
                     return (
                     <p>&#9989;</p>
                     )
-                } else if (answer.answer.str_value=="false") {
+                } else if (answer.answer.str_value.toLowerCase()=="false") {
                   return (
                      <p>&#10060;</p>
                   )
@@ -147,7 +147,7 @@ const Answer = (answer) =>{
               {answer.answer.prev_str_value && (
                   <div>
                          {(() => {
-                            if (answer.answer.prev_str_value=="true") {
+                            if (answer.answer.prev_str_value.toLowerCase()=="true") {
                                 return (
                                     <>
                                     <p className="prev_answer_title">{t("answer.prev_campaign")}:</p>
@@ -155,7 +155,7 @@ const Answer = (answer) =>{
                                     </>
                                 )
                             }
-                            else if (answer.answer.prev_str_value=="false") {
+                            else if (answer.answer.prev_str_value.toLowerCase()=="false") {
                                 return (
                                     <>
                                     <p className="prev_answer_title">{t("answer.prev_campaign")}:</p>
