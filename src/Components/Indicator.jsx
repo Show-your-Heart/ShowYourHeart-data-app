@@ -26,7 +26,7 @@ const Indicator = (indicator) =>{
                 if (indicator.indicator.indicator_code!=null) {
                     return (
                      <div>
-                     <p className="question" dangerouslySetInnerHTML={{ __html: indicator.indicator.indicator_code + " - " +indicator.indicator.indicator_name }} />
+                     <p className="question" dangerouslySetInnerHTML={{ __html: indicator.indicator.indicator_name }} />
                      {indicator.indicator.results?.map((answer) => (
                          <Answer answer={answer}/>
                      ))}
