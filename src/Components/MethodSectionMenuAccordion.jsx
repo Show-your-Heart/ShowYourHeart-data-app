@@ -21,6 +21,7 @@ const MethodSection = (methodsections) =>{
 
 
   methodsections.methodsection.forEach((s) => {
+
     if (s.method_level === 1) {
       // Comencem una nova secció principal
       current = { ...s, details: [] };

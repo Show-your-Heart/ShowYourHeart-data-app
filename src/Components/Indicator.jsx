@@ -20,7 +20,8 @@ const Indicator = (indicator) =>{
 
 
     return(
-         <div key={indicator.indicator.id_indicator} className="indicator">
+
+        <div key={indicator.indicator.id_indicator} className="indicator">
               {(() => {
 
                 if (indicator.indicator.indicator_code!=null) {

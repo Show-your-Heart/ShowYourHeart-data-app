@@ -20,7 +20,7 @@ const Method = (method) =>{
 
              <div className="metode">
              <h1>{method.method.method_name} - {method.campaign}</h1>
-              <p className="description"> {method.method.method_description} </p>
+              <p className="description" dangerouslySetInnerHTML={{ __html: method.method.method_description }} />
               </div>
 
               <div>
